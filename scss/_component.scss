@@ -1,0 +1,213 @@
+@use "vars" as *;
+
+
+.c-fc{ //font-color
+	&--white{
+		color: white !important;
+	}
+	&--black{
+		color: black !important;
+	}
+}
+
+
+
+.c-ft{//font-family
+	&--en{
+		font-family: $font-en;
+	}
+	&--jp{
+		font-family: $font-jp;
+	}
+	&--base{
+		font-family: $font-base;
+	}
+	&--adventures{
+		font-family: $font-adventures
+	}
+}
+
+
+
+
+
+
+.c-al{
+	&--c{
+		text-align: center !important;
+	}
+	
+	&--r{
+		text-align: right !important
+	}
+	
+	&--l{
+		text-align: left !important;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ====================================================
+Component
+==================================================== */
+// Common Text style
+.c-txt{
+	&__basic{
+		@include fts(17,27);
+	}
+	&__heading{
+		text-align: center;
+		margin-bottom: 62px;
+		@include mq(){
+			margin-bottom: 37px;
+		}
+	}
+}
+
+
+
+
+//ttl
+.c-ttl{
+	&__01{
+		line-height: 1;
+		text-align: center;
+		margin-bottom: 24px;
+		@include mq(){
+			margin-bottom: 20px;
+		}
+		.c-ft--adventures{
+			@include font-size(80);
+			@include mq(){
+				margin-bottom: 11px;
+				display: block;
+			}
+		}
+		.c-ft--base{
+			@include font-size(13);
+			display: block;
+			padding-bottom: 19px;
+			margin: 0 0 0 7px;
+		}
+	}
+	&__02{
+		margin-bottom: 56px;
+		@include mq{
+			margin-bottom: 20px;
+		}
+        & > *{
+            display: block;
+            text-align: center;
+        }
+        .c-ft{
+            &--base{
+                @include font-size(25);
+                line-height: 1.6;
+				letter-spacing: 1px;
+				margin-bottom: -13px;
+            }
+            &--adventures{
+                @include font-size(30);
+                color: rgba($color: #5792C4, $alpha: 1.0);
+            }
+        }
+    }
+}
+
+//btn
+.c-btn{
+	&__viewmore{
+		display: inline-block;
+		position: relative;
+		@include font-size(17);
+		color: #3E3A39;
+		line-height: 1.2;
+		padding: 0 0 0 37px;
+		letter-spacing: 1px;
+		&:before{
+			content: "";
+			width: 30px;
+			height: 30px;
+			background: url("../img/common/arrow-right.png")no-repeat;
+			background-size: 100%;
+			position: absolute;
+			@include v-align;
+			left: 0;
+		}
+		&--white{
+			color: white;
+			&:before{
+				background: url(../img/common/arrow-right-02.png) no-repeat;
+				background-size: 100%;
+			}
+		}
+	}
+	&__sub{
+		@include flex(center,center,wrap);
+		width: 100%;
+		max-width: 250px;
+		height: 70px;
+		font-family: $font-jp;
+		@include font-size(23);
+		color: white;
+		background: $blue;
+		border-radius: 10px;
+		border: none;
+		outline: none;
+		@include smooth-transition;
+		position: relative;
+		margin: 0 auto;
+		cursor: pointer;
+		&:after{
+			content: "";
+			border: solid white;
+			border-width: 0 1px 1px 0;
+			display: inline-block;
+			padding: 3px;
+			position: absolute;
+			top: 50%;
+			right: 20px;
+			transform: translateY(-50%) rotate(-45deg);
+		}
+		&:hover{
+			opacity: 0.7;
+		}
+		&--back{
+			&:after{
+				left: 20px;
+				right: auto;
+				transform: translateY(-50%) rotate(135deg);
+			}
+		}
+	}
+}
+
+
+//fade up
+.js-scrollin {
+	opacity: 0;
+	-webkit-transform: translate(0, 70px);
+	-ms-transform: translate(0, 70px);
+	transform: translate(0, 70px);
+	&.active{
+		opacity: 1;
+		-webkit-transform: translate(0, 0);
+		-ms-transform: translate(0, 0);
+		transform: translate(0, 0);
+		-webkit-transition: 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+		-o-transition: 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+		transition: 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	}
+}
+
+
+
