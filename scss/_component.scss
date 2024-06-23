@@ -126,6 +126,9 @@ Component
 			}
 			.c-ft--base{
 				@include font-size(30);
+				@include mq{
+					@include font-size(25);
+				}
 			}
 		}
 		&--smsp{
