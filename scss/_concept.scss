@@ -14,7 +14,8 @@
     &__list{
         margin-bottom: 92px;
         @include mq{
-            margin-bottom: 74px;
+            max-width: 650px;
+            margin: 0 auto 74px;
         }
         &-ttl{
             @include font-size(25);
@@ -28,7 +29,7 @@
             }
         }
         &-img{
-            width: 469px;
+            width: 46.5%;
             @include mq{
                 max-width: 288px;
                 width: 100%;
@@ -36,14 +37,18 @@
             }
         }
         &-ct{
-            width: calc(100% - 469px);
+            width: calc(100% - 46.5%);
             padding-left: 60px;
             position: relative;
             top: 10px;
             @include mq{
+                width: calc(100% - 288px);
+                padding-left: 30px;
+                top: 0;
+            }
+            @include mq(sm){
                 width: 100%;
                 padding-left: 0;
-                top: 0;
             }
         }
         &-desc{
@@ -71,8 +76,10 @@
                     &-img{
                         order: 2;
                         @include mq{
-                            order: 1;
                             max-width: 304px;
+                        }
+                        @include mq(sm){
+                            order: 1;
                             margin-bottom: 27px;
                         }
                     }
@@ -82,10 +89,16 @@
                         padding-right: 80px;
                         top: 27px;
                         @include mq{
+                            width: calc(100% - 304px);
+                            padding-left: 15px;
+                            padding-right: 15px;
+                            top: 0;
+                        }
+                        @include mq(sm){
+                            width: 100%;
                             order: 2;
                             padding-left: 0;
                             padding-right: 0;
-                            top: 0;
                         }
                     }
                 }
@@ -145,56 +158,92 @@
 .feature-page{
     padding: 112px 0 77px;
     @include mq{
-        padding: 69px 0 77px;
+        padding: 70px 0 37px;
     }
     &__ttl{
         margin-bottom: 90px;
+        @include mq{
+            margin-bottom: 54px;
+        }
     }
     &__list{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 0 45px;
+        @include mq(lg){
+            gap: 0 20px;
+        }
         @include mq{
             grid-template-columns: 1fr;
-            gap: 52px 0;
+            gap: 60px 0;
+            max-width: 450px;
+            margin: 0 auto;
         }
         &-item{
             position: relative;
             &:nth-child(1){
-                background: url(../img/concept/after-01.png) no-repeat top center/300px 400px;
+                background: url(../img/concept/after-01.png) no-repeat top center/84% 82%;
             }
             &:nth-child(2){
-                background: url(../img/concept/after-02.png) no-repeat top center/300px 400px;
+                background: url(../img/concept/after-02.png) no-repeat top center/84% 82%;
             }
             &:nth-child(3){
-                background: url(../img/concept/after-03.png) no-repeat top center/300px 400px;
+                background: url(../img/concept/after-03.png) no-repeat top center/84% 82%;
             }
         }
         &-heading{
             @include flex(0, center);
             margin-bottom: 7px;
             padding-left: 27px;
+            @include mq{
+                padding-left: 7px;
+                margin-bottom: 0;
+            }
         }
         &-number{
             font-family: $font-adventures;
             @include font-size(100);
             line-height: 1;
             width: 40px;
+            @include mq(lg){
+                @include font-size(90);
+            }
+            @include mq{
+                @include font-size(93);
+                position: relative;
+                top: -7px;
+                left: 5px;
+            }
         }
         &-ttl{
             width: calc(100% - 40px);
             @include fts(25, 40);
             font-weight: 500;
             padding-left: 20px;
+            @include mq(lg){
+                @include font-size(18);
+                padding-left: 10px;
+            }
+            @include mq{
+                @include fts(20, 30);
+                padding-left: 20px;
+            }
         }
         &-desc{
             line-height: 1.82;
             margin-bottom: 26px;
             letter-spacing: 1px;
             padding: 0 5px;
+            @include mq{
+                @include fts(16, 30);
+                margin-bottom: 21px;
+            }
         }
         &-img{
             padding: 0 3px;
+            @include mq{
+                padding: 0 10px;
+            }
         }
     }
 }

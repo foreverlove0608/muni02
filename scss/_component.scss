@@ -120,6 +120,29 @@ Component
                 color: rgba($color: #5792C4, $alpha: 1.0);
             }
         }
+		&--sm{
+			& > *{
+				text-align: left;
+			}
+			.c-ft--base{
+				@include font-size(30);
+				@include mq{
+					@include font-size(25);
+				}
+			}
+		}
+		&--smsp{
+			.c-ft--base{
+				@include mq{
+					@include font-size(25);
+				}
+			}
+		}
+		&--styles02{
+			.c-ft--adventures{
+				color: rgba(#DC985B, 0.5);
+			}
+		}
     }
 }
 
