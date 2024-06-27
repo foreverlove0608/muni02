@@ -117,7 +117,8 @@ Component
             }
             &--adventures{
                 @include font-size(30);
-                color: rgba($color: #5792C4, $alpha: 1.0);
+                color: rgba($color: #5792C4, $alpha: .5);
+	            opacity: 0.5;
             }
         }
 		&--sm{
@@ -165,6 +166,17 @@ Component
 			position: absolute;
 			@include v-align;
 			left: 0;
+			@include smooth-transition;
+		}
+		&:hover{
+			@include mq(tb-min){
+				opacity: 1;
+				color: $pink;
+				&:before{
+					background: url("../img/common/arrow-right-hv.png")no-repeat;
+					background-size: 100%;
+				}
+			}
 		}
 		&--white{
 			color: white;
@@ -173,6 +185,7 @@ Component
 				background-size: 100%;
 			}
 		}
+
 	}
 	&__sub{
 		@include flex(center,center,wrap);

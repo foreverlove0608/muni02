@@ -8,6 +8,19 @@
 	}
 }
 
+.page-trial, .page-faq{
+	.mv-page__ttl .c-ft--jp{
+		@include mq(md-min){
+			line-height: 1.475;
+			margin-bottom: 20px;
+		}
+		@include mq{
+			margin-bottom: 20px;
+		}
+	}
+}
+
+
 .trial-list{
 	@include flex(center,center,wrap);
 	margin: -30px -12px 150px;
@@ -58,10 +71,10 @@
 
 .trial-heading{
 	@include font-size(25);
-	font-weight: 500;
+	font-weight: 400;
 	margin-bottom: 50px;
 	h2{
-		font-weight: 500;
+		font-weight: 400;
 	}
 	.c-ft--adventures{
 		display: block;
@@ -132,7 +145,7 @@
 			display: inline-block;
 			background: #E6EAEF;
 			@include font-size(25);
-			font-weight: 500;
+			font-weight: 400;
 			line-height: 1.4;
 			position: relative;
 			padding: 5px 30px 5px 10px;
@@ -148,6 +161,9 @@
 		&--sp{
 			width: 100%;
 			padding-top: 10px;
+		}
+		p{
+			letter-spacing: 0.04em;
 		}
 	}
 }

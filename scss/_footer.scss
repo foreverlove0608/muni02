@@ -44,7 +44,7 @@
 					height: 2px;
 					background: url("../img/common/dots.png") repeat-x;
 					position: absolute;
-					@include v-align;
+					top: 12px;
 					right: 0;
 				}
 			}
@@ -53,6 +53,8 @@
 				padding: 0 0 0 10px;
 				@include mq(){
 					line-height: 2;
+					position: relative;
+					top: -4px;
 				}
 			}
 		}
@@ -101,8 +103,18 @@
 							padding: 2px;
 							transform: rotate(-45deg);
 							position: absolute;
-							top: 9px;
+							top: 10px;
 							left: 0;
+							@include smooth-transition;
+						}
+						&:hover{
+							color: $pink;
+							opacity: 1;
+							&:before{
+								border: solid $pink;
+								border-width: 0 1px 1px 0;
+								display: inline-block;
+							}
 						}
 					}
 				}
@@ -128,6 +140,35 @@
 		display: block;
 		width: 184px;
 		margin-bottom: 6px;
+		position: relative;
+		&:before{
+			display: block;
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: url("../img/common/tel-hv.png")no-repeat;
+			background-size: 100%;
+			opacity: 0;
+			visibility: hidden;
+			@include smooth-transition;
+		}
+		img{
+			@include smooth-transition;
+		}
+		&:hover{
+			opacity: 1;
+			&:before{
+				opacity: 1;
+				visibility: visible;
+			}
+			img{
+				opacity: 0;
+				visibility: hidden;
+			}
+		}
 	}
 	.copyright{
 		@include font-size(15);
@@ -190,7 +231,7 @@
 					padding: 5px 4px 1px;
 					margin: 0 0 2px 34px;
 					@include mq(){
-						padding: 5px 4px 0;
+						padding: 3px 4px;
 						margin: 0 0 3px 8px;
 					}
 				}
